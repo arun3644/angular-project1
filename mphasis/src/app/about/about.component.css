@@ -1,0 +1,13 @@
+.active{
+    background-color: yellow;
+    color:black;
+    padding:5px;
+    width:100px;
+}
+.no{
+ 
+    background-color: red;
+    color:white;
+    padding:5px;
+    width:100px
+}
