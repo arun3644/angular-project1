@@ -5,14 +5,15 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [RouterLink, RouterOutlet],
-  template: `
-    <nav>
-      <a routerLink="/home" style="margin-right: 10px;">Home</a>
-      <a routerLink="/about">About</a>
-    </nav>
-    <hr />
-    <router-outlet></router-outlet>
-  `,
-  styles: []
+  // template: `
+  //   <nav>
+  //     <a routerLink="/home" style="margin-right: 10px;">Home</a>
+  //     <a routerLink="/about">About</a>
+  //   </nav>
+  //   <hr />
+  //   <router-outlet></router-outlet>
+  // `,
+  styles: [],
+  templateUrl:'./app.component.html'
 })
 export class AppComponent {}
