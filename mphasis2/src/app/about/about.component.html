@@ -1,0 +1,37 @@
+<h1>STRUCTURAL DIRECTIVES</h1>
+<h2>ngIf</h2>
+<button (click)="isVisible = !isVisible" [disabled]="!isVisible">toggle the button</button>
+<p *ngIf="isVisible; else noContent ">button clicked</p>
+
+<ng-template #noContent>
+    <p>click the button</p>
+</ng-template>
+
+<h2>ngFor
+</h2>
+<div>
+    <p>FRUITS</p>
+    <ol>
+        <li *ngFor="let i of fruits">{{i}}</li>
+    </ol>
+</div>
+
+<h2>ngSwitch</h2>
+<div [ngSwitch]="value">
+  <p *ngSwitchCase="'A'">Case A</p>
+  <p *ngSwitchCase="'B'">Case B</p>
+  <p *ngSwitchDefault>Default Case</p>
+</div>
+
+<H1>ATTRIBUTE DIRECTIVES</H1>
+
+<h2 appDirective>[ngClass]</h2>
+<button [ngClass]="{'active':isActive,'no':!isActive}" (click)="isActive =!isActive">Click</button>
+
+<h2>[ngStyle]</h2>
+<p [ngStyle]="{'backgroundColor':'red', 'width':'fit-content','padding':'20px'}">this is a text</p>
+
+
+<p appHighlight>
+  Hover me to see yellow!
+</p>
