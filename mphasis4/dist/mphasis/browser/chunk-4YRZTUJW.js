@@ -1,0 +1,1 @@
+import{La as t,Ma as a,Va as i,za as o}from"./chunk-VIOSCHHF.js";var l=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=o({type:n,selectors:[["app-lazyloading"]],decls:2,vars:0,template:function(e,s){e&1&&(t(0,"p"),i(1,"lazyloading works!"),a())},encapsulation:2})};export{l as LazyloadingComponent};
