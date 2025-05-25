@@ -13,7 +13,12 @@ import { LazyloadingComponent } from './app/lazyloading/lazyloading.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, },
+  { path: 'home', component: HomeComponent, 
+    children:[
+      {path:'', redirectTo:'home', pathMatch:'full'},
+      {path:'reactive', component:ReactiveFormComponent}
+    ]
+  },
   { path: 'about', component: AboutComponent },
   { path: 'template-driven', component: TemplateDrivenComponent },
   { path: 'reactive', component: ReactiveFormComponent },

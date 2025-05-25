@@ -1,0 +1,31 @@
+.container{
+    margin:20px auto;
+    border:1px solid black; 
+    max-width:400px;
+    padding: 20px;
+}
+h2{
+    text-align: center;
+}
+.a,h2 {
+  padding: 10px;
+}
+
+.a input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.button{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.button button{
+    padding:10px;
+    margin:10px;
+}
+
+.red{
+    color:red;
+}
