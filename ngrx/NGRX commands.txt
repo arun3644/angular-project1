@@ -1,0 +1,41 @@
+1) ng new counter
+
+2) ng add @ngrx/schematics@latest
+
+3) y
+
+4) add into angular.json file   => inside the cli{}        
+     "schematicCollections": [
+      "@ngrx/schematics"
+    ]                                                                                                                                  ,    add this lines into angular.json if this command shows error     
+   ng config cli.defaultCollection @ngrx/schematics
+
+5)npm i @ngrx/store --save
+
+
+6)npm i @ngrx/effects --sav
+
+7)npm i @ngrx/entity --save
+
+8)npm i @ngrx/store-devtools --save
+
+
+9)ng g store State , enter this command and click enter if it asks path
+
+
+10)ng generate feature counter/Counter
+
+11)No, it's not necessary to run the below commands again.
+
+The ng generate feature counter/Counter command already creates actions, reducer, and selectors for the counter feature. If it not creates those files then run the below commands separately .                             ng generate action counter/Counter
+
+ng generate reducer counter/Counter --skip-tests=true
+
+ng generate selector counter/Counter
+ 
+12) create component => ng generate component counter
+ 
+
+
+
+
