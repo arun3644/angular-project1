@@ -1,0 +1,14 @@
+<h3>Todo List</h3>
+<input type="text" [(ngModel)]="title">
+<button (click)=add()>Add</button>
+
+<ul>
+    <li *ngFor="let i of todos$ | async"> 
+        <span  class="a">{{i.title}} </span>
+        <input *ngIf="editId === i.id"  [(ngModel)]="editTitle">
+        <button *ngIf="editId === i.id" (click)="update()">Save</button><br>
+        <button *ngIf="editId !== i.id" (click)="edit(i)">Edit</button>
+        <button *ngIf="editId !== i.id" (click)="delete(i.id)">Delete</button><br>
+    </li>
+
+</ul>
