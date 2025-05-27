@@ -1,0 +1,47 @@
+<div class="search">
+    <label for="search" (click)="call()">Search</label>
+    <input class="input" type="text" [(ngModel)]="search">
+</div>
+<div class="div2">
+    <table *ngIf="employee$ | async as employee">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email Id</th>
+            <th>Phone number</th>
+            <th>EDIT</th>
+        </tr>
+        <tr *ngFor="let i of employee">
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.emailId}}</td>
+            <td>{{i.phoneNumber}}</td>
+            <td (click)="enable()"><button>EDIT</button></td>
+        </tr>
+    </table>
+
+</div>
+
+<h2 *ngIf="updateData">Enter the Data</h2>
+<div class="div3" *ngIf="updateData">
+    <table *ngIf="employee$ | async as employee">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email Id</th>
+            <th>Phone number</th>
+            <th>EDIT</th>
+        </tr>
+        <tr>
+            <td> <input type="number" [(ngModel)]="newId" ></td>
+            <td> <input type="text" [(ngModel)]="newName">
+            </td>
+            <td> <input type="text" [(ngModel)]="newEmail">
+            </td>
+            <td><input type="number" [(ngModel)]="newPhoneNo">
+            </td>
+            <td (click)="update()"><button>Update</button></td>
+        </tr>
+    </table>
+
+</div>
