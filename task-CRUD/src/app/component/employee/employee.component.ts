@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { Employee } from 'src/app/employee/employee.model';
 import * as EmployeeActions from 'src/app/employee/employee.actions';
 import { EmployeeState } from 'src/app/employee/employee.reducer';
-import { EmployeeService } from 'src/app/servide/employee.service';
+
 @Component({
   selector: 'app-employee',
   standalone: true,
@@ -23,7 +23,7 @@ export class EmployeeComponent implements OnInit {
   newEmail:string='';
   newPhoneNo!:number;
 
-  constructor(private service:EmployeeService,private store: Store<{ employee: EmployeeState }>) { 
+  constructor(private store: Store<{ employee: EmployeeState }>) { 
     this.employee$ = this.store.pipe(
       select(state => state.employee.list) 
     );
@@ -37,9 +37,14 @@ export class EmployeeComponent implements OnInit {
     this.store.dispatch(EmployeeActions.filterEmployees({ data: this.search }));  
   }
 
-  enable(){
-    this.updateData=true;
-  }
+  enable(i: any) {
+  this.newId = i.id;
+  this.newName = i.name;
+  this.newEmail = i.emailId;
+  this.newPhoneNo = i.phoneNumber;
+  this.updateData = true; 
+}
+
 
   update(){
     this.store.dispatch(EmployeeActions.updateEmp({
@@ -53,16 +58,10 @@ export class EmployeeComponent implements OnInit {
     this.updateData=false;
   }
 
-  //  update(){
-  //   this.store.dispatch(EmployeeActions.updateEmp({
-  //     datas:{
-  //       id:this.newId,
-  //       name:this.newName,
-  //       emailId:this.newEmail,
-  //       phoneNumber:this.newPhoneNo
-  //     }
-  //   }))
-  //   this.updateData=false;
-  // }
+  deleteData(data:any){
+    this.store.dispatch(EmployeeActions.deleteData({data}));
+  }
+
+
 }
 

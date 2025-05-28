@@ -41,5 +41,9 @@ export const EmployeeReducer = createReducer(
     ...state,
     list: state.list.map(emp => (emp.id == datas.id) ?
      {...emp, ...datas}: emp)
+  })),
+  on(actions.deleteData,(state, {data})=>({
+    ...state,
+     list: state.list.filter(emp => emp.id != data)
   }))
 );

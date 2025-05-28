@@ -39,6 +39,17 @@ export class EmployeeEffects {
 
 
 
+delete$ = createEffect(() =>
+  this.action$.pipe(
+    ofType(Employeeactions.deleteData),
+    switchMap(({ data }) => 
+      this.http.delete(`http://localhost:3000/employees/${data}`).pipe(
+        map(() => Employeeactions.deleteAction({ data })),
+        catchError(error => of(Employeeactions.loadEmployeesFailure({ error })))
+      )
+    )
+  )
+);
 
 }
 

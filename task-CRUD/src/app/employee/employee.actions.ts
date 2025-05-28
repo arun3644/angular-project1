@@ -21,5 +21,14 @@ export const updateEmp= createAction(
 )
 
 export const updateData= createAction(
-  '[Employee] loadDataSuccess data', props<{data:any}>()
+  '[Employee] updateData data', props<{data:any}>()
 )
+
+export const deleteData= createAction(
+  '[Employee] deleteData', props<{data:number}>()
+)
+export const deleteAction= createAction(
+  '[Employee] deleteAction data', props<{data:any}>()
+)
+
+

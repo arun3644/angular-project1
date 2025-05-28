@@ -10,13 +10,15 @@
             <th>Email Id</th>
             <th>Phone number</th>
             <th>EDIT</th>
+            <th>DELETE</th>
         </tr>
         <tr *ngFor="let i of employee">
             <td>{{i.id}}</td>
             <td>{{i.name}}</td>
             <td>{{i.emailId}}</td>
             <td>{{i.phoneNumber}}</td>
-            <td (click)="enable()"><button>EDIT</button></td>
+            <td (click)="enable(i)"><button>EDIT</button></td>
+            <td (click)="deleteData(i.id)"><button>DELETE</button></td>
         </tr>
     </table>
 
@@ -33,7 +35,7 @@
             <th>EDIT</th>
         </tr>
         <tr>
-            <td> <input type="number" [(ngModel)]="newId" ></td>
+            <td> <input type="number"  [(ngModel)]="newId" ></td>
             <td> <input type="text" [(ngModel)]="newName">
             </td>
             <td> <input type="text" [(ngModel)]="newEmail">
